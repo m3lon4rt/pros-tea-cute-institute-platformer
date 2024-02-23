@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf5rdmbp1640n"]
+
+[ext_resource type="PackedScene" uid="uid://c216waj5j0dno" path="res://Level/Props/block.tscn" id="1_bijpj"]
+[ext_resource type="PackedScene" uid="uid://urofteov3gto" path="res://Entities/Player/player.tscn" id="2_nhv4b"]
+
+[node name="test_world" type="Node2D"]
+scale = Vector2(1, 0.997303)
+
+[node name="Props" type="Node" parent="."]
+
+[node name="Block" parent="Props" instance=ExtResource("1_bijpj")]
+position = Vector2(0, 510.964)
+scale = Vector2(1, 0.997303)
+
+[node name="Block2" parent="Props" instance=ExtResource("1_bijpj")]
+position = Vector2(128, 512)
+
+[node name="Block3" parent="Props" instance=ExtResource("1_bijpj")]
+position = Vector2(0, 384)
+
+[node name="Block4" parent="Props" instance=ExtResource("1_bijpj")]
+position = Vector2(640, 512)
+scale = Vector2(1, 0.99193)
+
+[node name="Block7" parent="Props" instance=ExtResource("1_bijpj")]
+position = Vector2(1024, 512)
+scale = Vector2(1, 0.994613)
+
+[node name="Block10" parent="Props" instance=ExtResource("1_bijpj")]
+position = Vector2(512, 512)
+scale = Vector2(1, 0.997303)
+
+[node name="Block11" parent="Props" instance=ExtResource("1_bijpj")]
+position = Vector2(1152, 510.622)
+scale = Vector2(1, 0.994613)
+
+[node name="Block12" parent="Props" instance=ExtResource("1_bijpj")]
+position = Vector2(1152, 384)
+scale = Vector2(1, 0.997303)
+
+[node name="Block13" parent="Props" instance=ExtResource("1_bijpj")]
+position = Vector2(1152, 256)
+scale = Vector2(1, 0.997303)
+
+[node name="Block14" parent="Props" instance=ExtResource("1_bijpj")]
+position = Vector2(1152, 128)
+scale = Vector2(1, 0.997303)
+
+[node name="Block15" parent="Props" instance=ExtResource("1_bijpj")]
+position = Vector2(0, 256)
+
+[node name="Block16" parent="Props" instance=ExtResource("1_bijpj")]
+position = Vector2(0, 128)
+
+[node name="Block17" parent="Props" instance=ExtResource("1_bijpj")]
+position = Vector2(256, 512)
+scale = Vector2(1, 0.997303)
+
+[node name="Block8" parent="Props" instance=ExtResource("1_bijpj")]
+position = Vector2(768, 512)
+scale = Vector2(1, 0.994613)
+
+[node name="Block18" parent="Props" instance=ExtResource("1_bijpj")]
+position = Vector2(896, 512)
+scale = Vector2(1, 0.994613)
+
+[node name="Block19" parent="Props" instance=ExtResource("1_bijpj")]
+position = Vector2(384, 512)
+scale = Vector2(1, 0.997303)
+
+[node name="Player" parent="." instance=ExtResource("2_nhv4b")]
+position = Vector2(560, 208.563)
