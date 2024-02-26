@@ -16,17 +16,29 @@ func _ready():
 # Add stuff to do when player enters this state
 func _enter_state() -> void:
 	set_physics_process(true)	# turn on physics when player enters this state
-	print("Entered Run State")
 
 # Add stuff to do when player leaves this state
 func _exit_state() -> void:
 	set_physics_process(false) # turn off physics when changing states to save memory
-	print("Exited Run State")
 
 # Place conditions on when to emit the signals as well as general stuff that needs to happen
 func _process(delta):
 	if Input.is_action_just_pressed("jump") and actor.is_on_floor():
 		pressed_jump.emit()
+	
+	if Input.is_action_just_released("left") or Input.is_action_just_released("right"):
+		released_left_or_right.emit()
+	
+	if actor.is_on_wall_only() and Input.is_action_just_pressed("left") and actor.last_button == "right":
+		actor.last_button = "left"
+		actor.velocity.y = 0
+		actor.velocity.x -= actor.jump_velocity
+		actor.velocity.y -= actor.jump_velocity
+	if actor.is_on_wall_only() and Input.is_action_just_pressed("right") and actor.last_button == "left":
+		actor.last_button = "right"
+		actor.velocity.y = 0
+		actor.velocity.x += actor.jump_velocity
+		actor.velocity.y -= actor.jump_velocity
 	
 	# Get the input direction and handle the movement.
 	var direction = Input.get_axis("left", "right")
@@ -34,7 +46,6 @@ func _process(delta):
 		actor.velocity.x += direction * actor.acceleration
 	else:
 		actor.velocity.x += 0
-		released_left_or_right.emit()
 	
 	# Slow down horizontal movement (friction)
 	if actor.velocity.x > 10:

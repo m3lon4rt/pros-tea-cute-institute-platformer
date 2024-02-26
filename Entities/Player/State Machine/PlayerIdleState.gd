@@ -16,18 +16,17 @@ func _ready():
 # Add stuff to do when player enters this state
 func _enter_state() -> void:
 	set_physics_process(true)	# turn on physics when player enters this state
-	print("Entered Idle State")
 
 # Add stuff to do when player leaves this state
 func _exit_state() -> void:
 	set_physics_process(false) # turn off physics when changing states to save memory
-	print("Exited Idle State")
 
 # Place conditions on when to emit the signals as well as general stuff that needs to happen
 func _process(delta):
 	if Input.is_action_just_pressed("jump") and actor.is_on_floor():
 		pressed_jump.emit()
-	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
+	
+	if Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right"):
 		pressed_left_or_right.emit()
 	
 	if not actor.is_on_floor():

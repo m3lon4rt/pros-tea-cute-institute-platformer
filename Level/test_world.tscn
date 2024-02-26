@@ -5,68 +5,48 @@
 
 [node name="test_world" type="Node2D"]
 scale = Vector2(1, 0.997303)
+metadata/_edit_lock_ = true
 
 [node name="Props" type="Node" parent="."]
 
 [node name="Block" parent="Props" instance=ExtResource("1_bijpj")]
-position = Vector2(0, 510.964)
-scale = Vector2(1, 0.997303)
-
-[node name="Block2" parent="Props" instance=ExtResource("1_bijpj")]
-position = Vector2(128, 512)
+position = Vector2(0, 512)
+scale = Vector2(10, 0.997303)
 
 [node name="Block3" parent="Props" instance=ExtResource("1_bijpj")]
-position = Vector2(0, 384)
-
-[node name="Block4" parent="Props" instance=ExtResource("1_bijpj")]
-position = Vector2(640, 512)
-scale = Vector2(1, 0.99193)
-
-[node name="Block7" parent="Props" instance=ExtResource("1_bijpj")]
-position = Vector2(1024, 512)
-scale = Vector2(1, 0.994613)
-
-[node name="Block10" parent="Props" instance=ExtResource("1_bijpj")]
-position = Vector2(512, 512)
-scale = Vector2(1, 0.997303)
-
-[node name="Block11" parent="Props" instance=ExtResource("1_bijpj")]
-position = Vector2(1152, 510.622)
-scale = Vector2(1, 0.994613)
+scale = Vector2(1, 4)
 
 [node name="Block12" parent="Props" instance=ExtResource("1_bijpj")]
-position = Vector2(1152, 384)
-scale = Vector2(1, 0.997303)
-
-[node name="Block13" parent="Props" instance=ExtResource("1_bijpj")]
 position = Vector2(1152, 256)
-scale = Vector2(1, 0.997303)
+scale = Vector2(1, 2.1)
 
-[node name="Block14" parent="Props" instance=ExtResource("1_bijpj")]
-position = Vector2(1152, 128)
-scale = Vector2(1, 0.997303)
+[node name="Block6" parent="Props" instance=ExtResource("1_bijpj")]
+position = Vector2(768, 0)
+scale = Vector2(1, 3)
 
-[node name="Block15" parent="Props" instance=ExtResource("1_bijpj")]
-position = Vector2(0, 256)
+[node name="Block2" parent="Props" instance=ExtResource("1_bijpj")]
+position = Vector2(1280, 256)
+scale = Vector2(5, 1)
 
-[node name="Block16" parent="Props" instance=ExtResource("1_bijpj")]
-position = Vector2(0, 128)
-
-[node name="Block17" parent="Props" instance=ExtResource("1_bijpj")]
-position = Vector2(256, 512)
-scale = Vector2(1, 0.997303)
+[node name="Block7" parent="Props" instance=ExtResource("1_bijpj")]
+position = Vector2(2816, -128)
+scale = Vector2(0.976, 4)
 
 [node name="Block8" parent="Props" instance=ExtResource("1_bijpj")]
-position = Vector2(768, 512)
-scale = Vector2(1, 0.994613)
+position = Vector2(2304, 256)
+scale = Vector2(1, 2.99191)
 
-[node name="Block18" parent="Props" instance=ExtResource("1_bijpj")]
-position = Vector2(896, 512)
-scale = Vector2(1, 0.994613)
+[node name="Block13" parent="Props" instance=ExtResource("1_bijpj")]
+position = Vector2(1920, 256)
+scale = Vector2(1, 2)
 
-[node name="Block19" parent="Props" instance=ExtResource("1_bijpj")]
-position = Vector2(384, 512)
-scale = Vector2(1, 0.997303)
+[node name="Block4" parent="Props" instance=ExtResource("1_bijpj")]
+position = Vector2(1920, 512)
+scale = Vector2(3, 1)
+
+[node name="Block5" parent="Props" instance=ExtResource("1_bijpj")]
+position = Vector2(2432, 256)
+scale = Vector2(3, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_nhv4b")]
 position = Vector2(560, 208.563)
