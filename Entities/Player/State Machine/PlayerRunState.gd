@@ -26,15 +26,17 @@ func _process(delta):
 	if Input.is_action_just_pressed("jump") and actor.is_on_floor():
 		pressed_jump.emit()
 	
-	if Input.is_action_just_released("left") or Input.is_action_just_released("right"):
+	if Input.is_action_just_released("left") or Input.is_action_just_released("right") and !Input.is_action_pressed("jump"):
 		released_left_or_right.emit()
 	
-	if actor.is_on_wall_only() and Input.is_action_just_pressed("left") and actor.last_button == "right":
+	if actor.is_on_wall_only() and Input.is_action_just_pressed("left") and actor.last_button == "right" and actor.wall_jumps > 0:
+		actor.wall_jumps -= 1
 		actor.last_button = "left"
 		actor.velocity.y = 0
 		actor.velocity.x -= actor.jump_velocity
 		actor.velocity.y -= actor.jump_velocity
-	if actor.is_on_wall_only() and Input.is_action_just_pressed("right") and actor.last_button == "left":
+	if actor.is_on_wall_only() and Input.is_action_just_pressed("right") and actor.last_button == "left" and actor.wall_jumps > 0:
+		actor.wall_jumps -= 1
 		actor.last_button = "right"
 		actor.velocity.y = 0
 		actor.velocity.x += actor.jump_velocity
@@ -49,9 +51,9 @@ func _process(delta):
 	
 	# Slow down horizontal movement (friction)
 	if actor.velocity.x > 10:
-		actor.velocity.x -= 20
+		actor.velocity.x -= actor.friction
 	elif actor.velocity.x < -10:
-		actor.velocity.x += 20
+		actor.velocity.x += actor.friction
 	else:
 		actor.velocity.x = 0
 	

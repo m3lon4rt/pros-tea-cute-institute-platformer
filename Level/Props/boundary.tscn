@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwmcibd0ea7lr"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_f7nl7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xmarw"]
+size = Vector2(128, 128)
+
+[node name="Boundary" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.0823529, 0.0470588, 1)
+self_modulate = Color(1, 1, 1, 0.290196)
+position = Vector2(63.75, 63.75)
+scale = Vector2(128.5, 128.5)
+texture = SubResource("PlaceholderTexture2D_f7nl7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(64, 64)
+shape = SubResource("RectangleShape2D_xmarw")

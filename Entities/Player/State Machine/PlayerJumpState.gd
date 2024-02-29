@@ -4,6 +4,7 @@ extends PlayerState
 # Reference to the relevant nodes that need to work when the player is in this state
 @export var actor: Player					# Pass the player's CharacterBody2D
 @export var animator: AnimatedSprite2D		# Pass the player's AnimatedSprite2D
+@export var camera: PlayerCamera
 var land_watcher = 1
 
 # Signals this state will emit to let the state machine know when to switch to another state
@@ -31,8 +32,9 @@ func _process(delta):
 	#	falling.emit()
 	
 	if actor.is_on_floor() and land_watcher == 0:
-		landed.emit()
+		camera.trauma = actor.screen_shake
 		land_watcher += 1
+		landed.emit()
 	
 	if not actor.is_on_floor():
 		actor.velocity.y += actor.gravity * delta

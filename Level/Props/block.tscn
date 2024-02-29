@@ -4,6 +4,7 @@
 size = Vector2(128, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lu207"]
+size = Vector2(21.3333, 21.3333)
 
 [node name="Block" type="StaticBody2D"]
 
